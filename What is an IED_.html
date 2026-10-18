@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What is an IED?</title>
+<style>
+:root{--bg:#fff;--text:#222;--muted:#666;--red:#d71920;--line:#eee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111;--text:#eee;--muted:#aaa;--line:#2a2a2a}}
+:root[data-theme="dark"]{--bg:#111;--text:#eee;--muted:#aaa;--line:#2a2a2a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
+main{max-width:640px;margin:0 auto;padding:32px 20px 48px}
+h1{font-size:2.4rem;margin:0 0 4px;color:var(--red)}
+.sub{color:var(--muted);margin:0 0 8px}
+hr{border:0;border-top:3px solid var(--red);width:64px;margin:16px 0 28px}
+h2{font-size:1.15rem;margin:32px 0 8px;color:var(--red)}
+p,li{font-size:1.05rem}
+ul{padding-left:20px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.box{border:2px solid var(--red);border-radius:8px;padding:8px 12px;font-weight:600;font-size:.95rem}
+.arrow{color:var(--red);font-weight:700}
+.card{border-left:4px solid var(--red);padding:4px 0 4px 14px;margin:12px 0;border-bottom:1px solid var(--line)}
+footer{margin-top:40px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<h1>What is an IED?</h1>
+<p class="sub">Intelligent Electronic Device</p>
+<hr>
+
+<p>An IED is a small computer built into the power grid. It <strong>measures</strong> current and voltage, <strong>decides</strong> if something is wrong, and <strong>acts</strong> by opening a circuit breaker.</p>
+
+<h2>How it works</h2>
+<div class="flow">
+<span class="box">Measure</span><span class="arrow">→</span>
+<span class="box">Detect fault</span><span class="arrow">→</span>
+<span class="box">Trip breaker</span><span class="arrow">→</span>
+<span class="box">Report</span>
+</div>
+
+<h2>Why it matters</h2>
+<ul>
+<li>It protects transformers, lines, and motors from damage.</li>
+<li>It isolates a fault in milliseconds, so the rest of the grid keeps running.</li>
+<li>It talks to other devices and control rooms (SCADA).</li>
+</ul>
+
+<h2>Common protection functions</h2>
+<div class="card"><strong>ANSI 50/51</strong><br>Overcurrent: trips when current is too high.</div>
+<div class="card"><strong>ANSI 27</strong><br>Undervoltage: trips when voltage drops too low.</div>
+
+<h2>How IEDs communicate</h2>
+<p><strong>IEC 61850</strong> is the international standard for substation communication. <strong>GOOSE</strong> sends fast trip signals between devices. <strong>Sampled Values</strong> stream measurements.</p>
+
+<h2>Our project: vIED</h2>
+<p>Today an IED is a dedicated hardware box. <strong>vIED</strong> asks: can the same functions run as software on standard Linux, for substations that cannot afford heavy equipment investment?</p>
+
+<footer>vIED project, HNSRE2SD, 2026. Describes what we aim to build.</footer>
+</main>
+</body>
+</html>
